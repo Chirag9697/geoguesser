@@ -1,18 +1,24 @@
 *{
     padding: 0;
+    
     margin: 0;
 }
-/* body{ */
-    /* width:"100%"; */
-    /* height:"100%"; */
-/* } */
+html{
+    width: 100%; 
+    height: 100%;
+}
+body{
+    width:100%;
+    height:90%;
+}
 .navbar{
     display: flex;
     align-items: center;
+    max-width: 100%;
+    width:99.3;
     justify-content: space-between;
     /* padding: ; */
     padding: 0.3125rem;
-    width:100vw;
     height:8vh;
     background: #003247;
     border-bottom: 4px solid #335E6F;
@@ -29,7 +35,7 @@
     flex-shrink: 0;
 }
 .titleofhackathon{
-    /* color: #FFF; */
+    color: #FFF;
     font-family: Inter;
     font-size: 1.25rem;
     font-style: normal;
@@ -37,22 +43,52 @@
     line-height: normal;
 }
 .rightofnavbar{
-    display: flex;
-    width: "200px";
+    /* display: flex; */
+    width: 5vw;
+    padding: 3px;
 }
 .logoimage{
     /* justify-content: flex-end; */
-    width:50px
+    width:5vw
 }
 
-.maincontainer{
-    width: 100vw;
-    height: 100vh;
+.mainimagecontainer{
+    /* width:99.9%; */
+    /* height: 60%; */
+    position: relative;
 }
 .mainimage{
-    height: 63.4375rem;
-    width: 120rem;
-    flex-shrink: 0;
-    fill: rgba(51, 96, 114, 0.24);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+.textcontainer{
+    position: absolute;
+    top:22rem;
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 30vh;
+}
+.titleofgeoguesser{
+    color: #FFF;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Odibee Sans;
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem; /* 20.313% */
+}
+
+.playingtext{
+    color: #FD5;
+    text-align: center;
+    margin-top: 50px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Odibee Sans;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.625rem; /* 40.625% */
 }
