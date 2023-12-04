@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* body{ */
+    /* width:"100%"; */
+    /* height:"100%"; */
+/* } */
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: ; */
+    padding: 0.3125rem;
+    width:100vw;
+    height:8vh;
+    background: #003247;
+    border-bottom: 4px solid #335E6F;
+}
+.leftofnavbar{
+    display: flex;
+    align-items: center;
+    width:21vw;
+    justify-content: space-between;
+}
+.burgericon{
+    width: 1.125rem;
+    height: 0.94419rem;
+    flex-shrink: 0;
+}
+.titleofhackathon{
+    /* color: #FFF; */
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.rightofnavbar{
+    display: flex;
+    width: "200px";
+}
+.logoimage{
+    /* justify-content: flex-end; */
+    width:50px
+}
+
+.maincontainer{
+    width: 100vw;
+    height: 100vh;
+}
+.mainimage{
+    height: 63.4375rem;
+    width: 120rem;
+    flex-shrink: 0;
+    fill: rgba(51, 96, 114, 0.24);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
