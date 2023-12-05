@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    background-image: url("../backgroundgameplayimage.png");
+    background-image: url("../images/backgroundgameplayimage.png");
 }
 .navbar{
     display: flex;
@@ -206,7 +206,7 @@ letter-spacing: 0.225rem;
     position: relative;
     /* background: red; */
 }
-.satelliteimage{
+#viewDiv{
     width: 55vw;
     height: 80vh;
     background-color: white;

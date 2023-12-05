@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>geoguesser</title>
     <link rel="stylesheet" href="./styles/gamepage.css" />
+  
+      <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+      
   </head>
   <body>
     <nav class="navbar">
@@ -12,13 +15,13 @@
         <p class="titleofhackathon">SIF-SPACE Hackathon 2023</p>
       </div>
       <div class="rightofnavbar">
-        <img class="logoimage" src="./logo.png" alt="" />
+        <img class="logoimage" src="../images/logo.png" alt="" />
       </div>
     </nav>
     <div class="gameplaymaincontent">
       <div class="leftofgameplaypage">
         <div class="harrycontainer">
-          <img class="harryimage" src="./harryimage.png" alt="" />
+          <img class="harryimage" src="../images/harryimage.png" alt="" />
           <div class="svgcontainer">
             <div class="topsvg">
               <svg
@@ -120,7 +123,7 @@
         </div>
       </div>
       <div class="midofgamepage">
-        <div class="satelliteimage">acasd</div>
+        <div  id="viewDiv"></div>
         <div class="svgcontainermidpage">
           <div class="topsvgmidpage">
             <svg
@@ -216,4 +219,6 @@
       </div>
     </div>
   </body>
+  <script src="https://js.arcgis.com/4.28/"></script>
+      <script src="../scripts/satelliteimage.js"></script>
 </html>
