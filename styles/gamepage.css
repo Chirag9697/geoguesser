@@ -44,6 +44,11 @@ body{
     /* justify-content: flex-end; */
     width:5vw
 }
+
+.gameplaymaincontent{
+    display: flex;
+    justify-content: space-between;
+}
 .harrycontainer{
     display: flex;
     position: relative;
@@ -191,5 +196,136 @@ letter-spacing: 0.225rem;
     line-height: normal;
     letter-spacing: 0.1rem;
     text-align: center;
+    text-transform: uppercase;
+}
+
+.midofgamepage{
+    padding: 1.4rem;
+    width: 70vw;
+    margin-left: 1rem;
+    position: relative;
+    /* background: red; */
+}
+.satelliteimage{
+    width: 55vw;
+    height: 80vh;
+    background-color: white;
+    margin-top: 0.76rem;
+    margin-left: 0.5rem;
+}
+.svgcontainermidpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 86vh;
+    position: absolute;
+    top: 1rem;
+    bottom: 1;
+}
+.topsvgmidpage{
+    display: flex;
+    width: 56vw;
+    justify-content: space-between;
+}
+.bottomsvgmidpage{
+    display: flex;
+    width: 56vw;
+    justify-content: space-between;
+}
+
+.rightofmidpage{
+    margin-top: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.caliberationcontainer{
+    display: flex;
+    flex-direction: column;
+    width:23vw;
+    /* background:red; */
+    height: 45vh;
+}
+.caliberationtitle{
+    background: rgba(75,192,106,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+}
+.caliberationmap{
+    background:white;
+    height: 35vh;
+}
+.caliberationtitle p{
+    color: #FFF;
+    font-family: Big Shoulders Display;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+.guessingbutton{
+    text-align: center;
+    border: 1px solid var(--Primary, #5DE26A);
+}
+.guessingbutton p{
+    color: var(--Primary, #5DE26A);
+    text-align: center;
+    font-family: Big Shoulders Display;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1875rem;
+    text-transform: uppercase;
+}
+.questcontainer{
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--Primary, #5DE26A);
+    margin-right: 1rem;
+
+}
+.questtitle{
+    background: rgba(75,192,106,0.5);
+    width: 23.1vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.questtitle p{
+    color: #FFF;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+.questcontenttitle{
+    color: #4BC06A;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    /* letter-spacing: 0.45rem; */
+    text-transform: uppercase;
+}
+.questcontentpara{
+    color: #7A7A7A;
+    font-family: Iceland;
+    font-size:0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-transform: uppercase;
 }
