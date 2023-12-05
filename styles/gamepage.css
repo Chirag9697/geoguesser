@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../images/backgroundgameplayimage.png");
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    width:99.3;
+    justify-content: space-between;
+    /* padding: ; */
+    padding: 0.3125rem;
+    height:8vh;
+    border-bottom: 1px solid #335E6F;
+}
+.leftofnavbar{
+    display: flex;
+    align-items: center;
+    width:21vw;
+    justify-content: space-between;
+}
+.burgericon{
+    width: 1.125rem;
+    height: 0.94419rem;
+    flex-shrink: 0;
+}
+.titleofhackathon{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.rightofnavbar{
+    /* display: flex; */
+    width: 5vw;
+    padding: 3px;
+}
+.logoimage{
+    /* justify-content: flex-end; */
+    width:5vw
+}
+
+.gameplaymaincontent{
+    display: flex;
+    justify-content: space-between;
+}
+.harrycontainer{
+    display: flex;
+    position: relative;
+    width: 12vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.harryimage{
+    width: 10vw;
+}
+.harryname{
+    color: #63B98D;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 743;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    /* margin-right: 30px; */
+}
+.svgcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35vh;
+    position: absolute;
+    top: 0;
+}
+.topsvg{
+    display: flex;
+    width: 12vw;
+    justify-content: space-between;
+}
+.bottomsvg{
+    display: flex;
+    width: 12vw;
+    justify-content: space-between;
+}
+.gamedetailscontainer{
+    margin-top: 1rem;
+    padding: 1rem;
+}
+.roundcontainer{
+    display: flex;
+    flex-direction: column;
+}
+.roundtitle{
+    width: 10vw;
+    height: 5vh;
+    text-align: center;
+    background: rgba(75,192,106,0.3);
+    /* opacity: 0.5; */
+}
+.roundtitle p{
+    color: #FFF;
+    opacity: 1;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    /* font-weight: 743; */
+    line-height: normal;
+    /* letter-spacing: 0.225rem; */
+    text-transform: uppercase;
+}
+.noofrounds{
+    width: 10vw;
+}
+.noofroundstext{
+    color: #FFF;
+    font-family: Iceland;
+    font-size: 1.2rem;
+    font-style: normal;
+    /* font-weight: 400; */
+    line-height: normal;
+    text-align: center;
+    letter-spacing: 0.45rem;
+    text-transform: uppercase;
+}
+.taskcontainer{
+    width: 13vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tasktitle{
+    width: 10vw;
+    text-align: center;
+    background: rgba(255,10,10,0.4);
+
+}
+.tasktitle p{
+    color: #FFF;
+    font-family: Iceland;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* letter-spacing: 0.65625rem; */
+    text-transform: uppercase;
+}
+.taskcontent{
+    color: #FF0A0A;
+    font-family: Iceland;
+    font-size: 0.9rem;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.45rem;
+    text-transform: uppercase;
+}
+
+.personaldetailscontainer{
+
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+}
+.astronautdetails{
+    width: 15vw;
+}
+.astronautattribute{
+    color: #FFF;
+    /* text-align: center; */
+    font-family: Iceland;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+letter-spacing: 0.225rem;
+    text-transform: uppercase;
+}
+.aboutastronaut{
+    color: #63B98D;
+    font-family: Big Shoulders Display;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.midofgamepage{
+    padding: 1.4rem;
+    width: 70vw;
+    margin-left: 1rem;
+    position: relative;
+    /* background: red; */
+}
+#viewDiv{
+    width: 55vw;
+    height: 80vh;
+    background-color: white;
+    margin-top: 0.76rem;
+    margin-left: 0.5rem;
+}
+.svgcontainermidpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 86vh;
+    position: absolute;
+    top: 1rem;
+    bottom: 1;
+}
+.topsvgmidpage{
+    display: flex;
+    width: 56vw;
+    justify-content: space-between;
+}
+.bottomsvgmidpage{
+    display: flex;
+    width: 56vw;
+    justify-content: space-between;
+}
+
+.rightofmidpage{
+    margin-top: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.caliberationcontainer{
+    display: flex;
+    flex-direction: column;
+    width:23vw;
+    /* background:red; */
+    height: 45vh;
+}
+.caliberationtitle{
+    background: rgba(75,192,106,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+}
+.caliberationmap{
+    background:white;
+    height: 35vh;
+}
+.caliberationtitle p{
+    color: #FFF;
+    font-family: Big Shoulders Display;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+.guessingbutton{
+    text-align: center;
+    border: 1px solid var(--Primary, #5DE26A);
+}
+.guessingbutton p{
+    color: var(--Primary, #5DE26A);
+    text-align: center;
+    font-family: Big Shoulders Display;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1875rem;
+    text-transform: uppercase;
+}
+.questcontainer{
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--Primary, #5DE26A);
+    margin-right: 1rem;
+
+}
+.questtitle{
+    background: rgba(75,192,106,0.5);
+    width: 23.1vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+.questtitle p{
+    color: #FFF;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
+}
+.questcontenttitle{
+    color: #4BC06A;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    /* letter-spacing: 0.45rem; */
+    text-transform: uppercase;
+}
+.questcontentpara{
+    color: #7A7A7A;
+    font-family: Iceland;
+    font-size:0.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
