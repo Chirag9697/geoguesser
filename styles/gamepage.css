@@ -4,6 +4,10 @@
 }
 body{
     background-image: url("../images/backgroundgameplayimage.png");
+    z-index: 1;
+}
+.esri-component esri-attribution esri-widget {
+    display: none;
 }
 .navbar{
     display: flex;
@@ -36,13 +40,23 @@ body{
     line-height: normal;
 }
 .rightofnavbar{
-    /* display: flex; */
-    width: 5vw;
+    display: flex;
+    justify-content: space-between;
+    z-index:1;
+    width: 10vw;
     padding: 3px;
 }
+.exitsvg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
 .logoimage{
     /* justify-content: flex-end; */
-    width:5vw
+    margin-left: 2rem;
+    width:4.5vw
 }
 
 .gameplaymaincontent{
@@ -240,11 +254,25 @@ letter-spacing: 0.225rem;
     flex-direction: column;
 }
 .caliberationcontainer{
+    display: block;
     display: flex;
+    /* position: absolute; */
     flex-direction: column;
     width:23vw;
-    /* background:red; */
+    z-index: 2;
+    cursor: pointer;
+    /* bottom:  12; */
     height: 45vh;
+}
+.caliberationcontainer:hover{
+    /* transform: scale(2,2); */
+    scale: 2;
+    translate: -12vw 100px;
+
+    transition: 0.3s ease-in-out;
+    /* overflow: hidden; */
+    z-index: 3;
+    /* margin-right: 10rem; */
 }
 .caliberationtitle{
     background: rgba(75,192,106,0.5);
@@ -256,6 +284,9 @@ letter-spacing: 0.225rem;
 .caliberationmap{
     background:white;
     height: 35vh;
+    /* left: 0; */
+    /* width: 50vw; */
+    z-index: 2;
 }
 .caliberationtitle p{
     color: #FFF;
@@ -268,11 +299,17 @@ letter-spacing: 0.225rem;
     text-transform: uppercase;
 }
 .guessingbutton{
+    display: none;
     text-align: center;
     border: 1px solid var(--Primary, #5DE26A);
 }
+.guessingbutton:hover{
+    background: #5DE26A;
+    /* color: #fefefe; */
+    /* font */
+}
 .guessingbutton p{
-    color: var(--Primary, #5DE26A);
+    color: var(--Primary, #fefefe);
     text-align: center;
     font-family: Big Shoulders Display;
     font-size: 1rem;
@@ -329,3 +366,40 @@ letter-spacing: 0.225rem;
     line-height: normal;
     text-transform: uppercase;
 }
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    background: red;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
