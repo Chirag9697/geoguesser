@@ -215,23 +215,23 @@ letter-spacing: 0.225rem;
 
 .midofgamepage{
     padding: 1.4rem;
-    width: 65vw;
+    width: 60vw;
     margin-left: 1rem;
     position: relative;
     /* background: red; */
 }
 #viewDiv{
     width: 55vw;
-    height: 80vh;
+    height: 72vh;
     background-color: white;
-    margin-top: 0.76rem;
+    margin-top: 1rem;
     margin-left: 0.5rem;
 }
 .svgcontainermidpage{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 86vh;
+    height: 80vh;
     position: absolute;
     top: 1rem;
     bottom: 1;
