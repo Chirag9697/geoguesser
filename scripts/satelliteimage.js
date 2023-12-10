@@ -4,7 +4,7 @@ let mapOptions2 = {
   zoom:10
 }
 
-const actualcenter=[73.313,18.112];
+const actualcenter=[18.5204,73.8567];
 let latitude=null;
 let longitude=null;
 const guessingbutton=document.querySelector(".guessingbutton");
@@ -73,7 +73,7 @@ require([
       container: "viewDiv",
       map: map,
       zoom: 14,
-      center: [actualcenter[0], actualcenter[1]],
+      center: [actualcenter[1], actualcenter[0]],
       constraints: {
         minZoom: 12,
         geometry: maxExtent
@@ -142,6 +142,8 @@ require([
       if(timevaluemin==0 && timevaluesecond==-1){
           time.innerText=`${timevaluemin}`+":"+`${timevaluesecond}`;
           clearInterval(myinterval);
+          //actualcenter[0]->latitude
+          //actualcenter[1]->longitude
           alert(distance(actualcenter[0],actualcenter[1],latitude,longitude));
           if(round<6){
             modal.style.display = "block";

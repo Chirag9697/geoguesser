@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+    background-image: url("../images/scorecardcbackground.png");
+    z-index: 1;
+}
+.bordercontainer{
+    position: relative;
+    height: 100vh;
+    width: 90vw;
+    /* left: 10; */
+}
+.border{
+    position: absolute;
+    top:0;
+    width: 90%;
+    left: 9rem;
+    z-index: 4;
+}
+.congotextcontainer{
+    /* bottom: 0; */
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 40vw;
+    height: 10vh;
+    /* top: 10; */
+    z-index:3;
+    margin-top: 8rem;
+    margin-left: 17rem;
+}
+.congotext{
+    color: #FFF;
+    text-align: center;
+    font-family: Iceland;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.upperrectange{
+    display: flex;
+    /* justify-content: center; */
+
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    width: 20vw;
+    height: 10vh;
+    margin-top: 6rem;
+    margin-left: 13rem;
+    
+}
+.lowerrectange{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    position: absolute;
+    z-index: 3;
+    width: 20vw;
+    height: 10vh;
+    margin-top: 26rem;
+    margin-left: 43rem;
+}
+.harrycontainer{
+    display: flex;
+    position: relative;
+    position: absolute;
+    width: 12vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    /* right: 0; */
+    margin-top: 6rem;
+    margin-right: 2rem;
+    right: 0;
+}
+.harryimage{
+    width: 10vw;
+}
+.harryname{
+    color: #63B98D;
+    font-family: Big Shoulders Display;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 743;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    /* margin-right: 30px; */
+}
+.svgcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35vh;
+    position: absolute;
+    top: 0;
+}
+.topsvg{
+    display: flex;
+    width: 12vw;
+    justify-content: space-between;
+}
+.bottomsvg{
+    display: flex;
+    width: 12vw;
+    justify-content: space-between;
+}
+.questcompletedcontainer{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.questtext{
+    color: #FFF;
+    font-family: Rubik Moonrocks;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    text-shadow: 2px 2px #00ff00;
+    line-height: normal;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+}
+.completedtext{
+    color: #FFF;
+    font-family: Rubik Moonrocks;
+    font-size: 2rem;
+    font-style: normal;
+    text-shadow: 2px 2px #00ff22;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+}
+.roundcompletedcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 10rem;
+    margin-left: 18rem;
+    position: absolute;
+    width: 20rem;
+    height: 14rem;
+}
+.individualroundcontainer{
+    display: flex;
+
+}
+.roundnumbertext{
+    color: #FFF;
+font-family: Caesar Dressing;
+font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.roundscoretext{
+    color: #FFF;
+    font-family: Caesar Dressing;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.navigationcontainer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 90vw;
+    height: 10vh;
+    bottom: 0;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.pilotdetails{
+    display: flex;
+    flex-direction: column;
+}
+.maintitle{
+    color: #FFF;
+    font-family: Iceland;
+    font-size: 0.8rem;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 6.6px;
+    text-transform: uppercase;
+}
+.maincontent{
+    color: #63B98D;
+    font-family: Big Shoulders Display;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 743;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.corporationdetails{
+    display: flex;
+    flex-direction: column;
+}
+
+.occupationdetails{
+    display: flex;
+    flex-direction: column;
+}
+.backtohomenavigationcontainer{
+    background: rgba(75, 192, 106, 0.50);
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    border-top: 2px solid #4BC06A;
+    border-right: 1px solid #4BC06A;
+    border-bottom: 2px solid #4BC06A;
+    border-left: 1px solid #4BC06A;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.backtohomenavigationcontainer:hover{
+    background: rgba(75, 192, 106, 0.25);
+}
+
+.backtohomenavigationtext{
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    font-family: Big Shoulders Display;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 200;
+    /* cursor: pointer; */
+    
+    line-height: normal;    
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+.backtohomenavigationtext:hover{
+    cursor: pointer;
+    background: rgba(75, 192, 106, 0.25);
+}
