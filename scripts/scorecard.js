@@ -5,6 +5,8 @@ let len=upperrectangle.length;
 console.log(lowerrectangle);
 let i=0;
 setInterval(()=>{
+    if(upperrectangle[i]!=null && lowerrectangle[i]!=null){
+
         if(upperrectangle[i].style.display){
             upperrectangle[i].style.removeProperty("display");
         }
@@ -21,4 +23,5 @@ setInterval(()=>{
         if(i==4){
             i=0;
         }
-},250);
+    }
+    },250);

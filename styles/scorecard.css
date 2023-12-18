@@ -221,17 +221,20 @@ line-height: normal;
 }
 .backtohomenavigationcontainer{
     background: rgba(75, 192, 106, 0.50);
-    width: 10rem;
-    height: 3rem;
     cursor: pointer;
     border-top: 2px solid #4BC06A;
     border-right: 1px solid #4BC06A;
+    width: 10rem;
+    color:white;
     border-bottom: 2px solid #4BC06A;
     border-left: 1px solid #4BC06A;
-    display: flex;
+    height: 3rem;
+    z-index:6;
+    /* margin-top: 1rem; */
+    /* display: flex; */
     padding: 1rem;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 .backtohomenavigationcontainer:hover{
     background: rgba(75, 192, 106, 0.25);

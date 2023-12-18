@@ -1,4 +1,8 @@
 let audio = new Audio("./clicksound.wav");
+let scoreobtained=[];
+let guesseddistance=0;
+let score=0;
+let myinterval=null;
 let mapOptions2 = {
   center: [51.958, 9.141],
   zoom: 10,
@@ -90,21 +94,21 @@ require([
 });
 
 const time = document.getElementById("timeremaining");
-// Get the modal
 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
 const body=document.getElementById("bodycontainer");
 var span = document.getElementsByClassName("close")[0];
-const nextround = document.querySelector(".nextround");
+const nextround = document.querySelector(".nextroundbutton");
 const noofrounds = document.querySelector(".noofroundstext");
-
+const noofroundsdialog=document.getElementById("noofroundsdialogbox");
+const guesseddistancevalue=document.getElementById("actualguesseddistance");
+const scorevalue=document.getElementById("actualscore");
+const finishguessbutton=document.querySelector(".guessingbutton");
 let round = 1;
-console.log(nextround);
 function distance(lat1, lon1, lat2, lon2) {
+    if(lat2==null || lon2==null){
+      return 0;
+    }
   if (lat1 == lat2 && lon1 == lon2) {
     return 0;
   } else {
@@ -125,11 +129,22 @@ function distance(lat1, lon1, lat2, lon2) {
   }
   return dist;
 }
-
+function givescore(distance){
+  if(distance==0){
+    return 0;
+  }
+  if(distance<=100){
+    return 1000;
+  }
+  if(distance<=500){
+    return 500
+  }
+  return 100;
+}
 function settimer() {
-  let timevaluemin = 0;
-  let timevaluesecond = 5;
-  const myinterval = setInterval(() => {
+  let timevaluemin = 2;
+  let timevaluesecond = 30;
+  myinterval = setInterval(() => {
     if (timevaluemin == 0) {
       time.style.color = "red";
     }
@@ -138,6 +153,11 @@ function settimer() {
     if (timevaluemin == 0 && timevaluesecond ==0) {
       time.innerText = `${timevaluemin}` + ":" + `${timevaluesecond}`;
       clearInterval(myinterval);
+      guesseddistance=distance(actualcenter[0],actualcenter[1],latitude,longitude);
+      score=givescore(guesseddistance);
+      scoreobtained.push(score);
+      guesseddistancevalue.innerText=`${guesseddistance}KM`;
+      scorevalue.innerText=`${score}`;
       modal.style.display = "block";
     }
     if (timevaluesecond == -1) {
@@ -147,15 +167,34 @@ function settimer() {
   }, 1000);
 }
 settimer();
-
+finishguessbutton.addEventListener("click",()=>{
+  console.log("hello finished guessing");
+  time.innerText = `${0}` + ":" + `${0}`;
+  clearInterval(myinterval);
+  guesseddistance=distance(actualcenter[0],actualcenter[1],latitude,longitude);
+  score=givescore(guesseddistance);
+  scoreobtained.push(score);
+  modal.style.display = "block";
+  guesseddistancevalue.innerText=`${guesseddistance}KM`;
+  scorevalue.innerText=`${score}`;
+})
 nextround.addEventListener("click", () => {
   latitude = null;
   longitude = null;
-  // map2.removeLayer(marker);
+  guesseddistance=0;
+  score=0;
+  map2.removeLayer(marker);
   round++;
+  
   if (round<1) {
     modal.style.display = "none";
-    noofrounds.innerText = `${round}/6`;
+    noofrounds.innerText = `${round}/5`;
+    noofroundsdialog.innerText=`${round}`;
+    
+    if(round==5){
+      
+      nextround.innerText="Check SCORE";
+    }
     settimer();
   } else {
     console.log("gameover");
@@ -271,7 +310,52 @@ nextround.addEventListener("click", () => {
         </div>
     </div>
     <div class="roundcompletedcontainer">
-        <div class="individualroundcontainer">
+        
+    </div>
+    <div class="navigationcontainer">
+        <div class="pilotdetails">
+            <p class="maintitle">PILOT NAME</p>
+            <p class="maincontent">LUZ WINTHEISER</p>
+        </div>
+        <div class="corporationdetails">
+            <div class="maintitle">CORPORATION</div>
+            <div class="maincontent">LEGACY.IO</div>
+        </div>
+        <div class="occupationdetails">
+            <div class="maintitle">OCCUPATION</div>
+            <div class="maincontent">ASTRONAUT</div>
+        </div>
+        <Button class="backtohomenavigationcontainer">
+              BACK TO HOME
+          </Button>
+    </div>
+</div>`
+  }
+  let backbutton=document.querySelector(".backtohomenavigationcontainer");
+  let roundcontainer=document.querySelector(".roundcompletedcontainer");
+console.log(roundcontainer);
+console.log(scoreobtained);
+let text="";
+for(i=0;i<scoreobtained.length;i++){
+  text+=`<div class="individualroundcontainer">
+    <p class="roundnumbertext">ROUND ${i+1}-</p>
+    <p class="roundscoretext">${scoreobtained[i]}</p>
+  </div>
+  `
+}
+roundcontainer.innerHTML=text;
+backbutton.addEventListener("click",()=>{
+  window.location.href = "index.html";
+})
+backbutton.addEventListener("mouseover",()=>{
+  backbutton.style.background="rgba(75, 192, 106, 0.25)";
+})
+backbutton.addEventListener("mouseout",()=>{
+  backbutton.style.background="rgba(75, 192, 106, 0.50)";
+})
+});
+
+{/* <div class="individualroundcontainer">
             <p class="roundnumbertext">ROUND 1-</p>
             <p class="roundscoretext">100</p>
         </div>
@@ -290,27 +374,6 @@ nextround.addEventListener("click", () => {
         <div class="individualroundcontainer">
             <p class="roundnumbertext">ROUND 5-</p>
             <p class="roundscoretext">100</p>
-        </div>
-    </div>
-    <div class="navigationcontainer">
-        <div class="pilotdetails">
-            <p class="maintitle">PILOT NAME</p>
-            <p class="maincontent">LUZ WINTHEISER</p>
-        </div>
-        <div class="corporationdetails">
-            <div class="maintitle">CORPORATION</div>
-            <div class="maincontent">LEGACY.IO</div>
-        </div>
-        <div class="occupationdetails">
-            <div class="maintitle">OCCUPATION</div>
-            <div class="maincontent">ASTRONAUT</div>
-        </div>
-        <Button class="backtohomenavigationcontainer">
-        <a href="index.html">
-        <p class="backtohomenavigationtext">BACK TO HOME</p>
-        </a>
-        </Button>
-    </div>
-</div>`
-  }
-});
+        </div> */}
+
+

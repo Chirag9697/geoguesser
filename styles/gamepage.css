@@ -382,13 +382,89 @@ letter-spacing: 0.225rem;
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    background: red;
+    background-image: url("../images/backgroundgameplayimage.png");
+    /* margin: 15% auto; 15% from the top and centered */
+    margin: auto;
+    margin-top: 2%;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
+    /* Could be more or less, depending on screen size */
+    height: 50%;
   }
+.timeupcontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.timeupcontent{
+    color: #FFF;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Iceland;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+}
+.scoreobtainedcontainer{
+    color: white;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.roundnumbercontainer{
+    text-align: center;
+}
+.titleofdialog{
+    color: #FF0A0A;
+    font-family: Iceland;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+.actualnumbercontent{
+    color: #FFF;
+    font-family: Iceland;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+.nextroundbuttoncontainer{
+    display: flex;
+    justify-content: center;
+}
+.nextroundbutton{
+    width: 20%;
+    height: 10%;
+    color: var(--Primary, #5DE26A);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: 1px solid var(--Primary, #5DE26A);
+background: rgba(0, 255, 10, 0.16);
+}
+.nextroundbutton:hover{
+    cursor: pointer;
+    background: rgba(0, 255, 10, 0.50);;
+}
+.guesskilometrescontainer{
+    text-align: center;
+}
   
+.scoreobtainedcontainer{
+    text-align: center;
+
+}
   /* The Close Button */
   .close {
     color: #aaa;
@@ -403,3 +479,6 @@ letter-spacing: 0.225rem;
     text-decoration: none;
     cursor: pointer;
   }
+
+
+  
