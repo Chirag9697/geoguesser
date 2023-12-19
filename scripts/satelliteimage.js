@@ -8,22 +8,42 @@ let mapOptions2 = {
   zoom: 10,
 };
 
+
 const actualcenter = [18.5204, 73.8567];
 let latitude = null;
 let longitude = null;
 const guessingbutton = document.querySelector(".guessingbutton");
-
+let view=null;
 let map2 = new L.map("map", mapOptions2);
-
+// let map3 = new L.map("map2", mapOptions2);
+// L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  // zoomOffset: 1
+// }).addTo(map2);
 let layer = new L.TileLayer(
   "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 );
+let layer2 = new L.TileLayer(
+  "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+);
 map2.addLayer(layer);
-
+// map3.addLayer(layer);
 let marker = null;
-L.marker([actualcenter[0], actualcenter[1]])
-  .addTo(map2)
-  .bindPopup("I am a actual place");
+var greenIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+//green marker
+// L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map2);
+//adding lines
+// L.polyline([[actualcenter[0],actualcenter[1]],[18.54,74]]).addTo(map2)
+
+// L.marker([actualcenter[0], actualcenter[1]])
+  // .addTo(map2)
+  // .bindPopup("I am a actual place");
 map2.on("click", (event) => {
   audio.play();
   guessingbutton.style.display = "block";
@@ -35,8 +55,11 @@ map2.on("click", (event) => {
   latitude = event.latlng.lat;
   longitude = event.latlng.lng;
 });
-require([
-  "esri/config",
+
+// function showsatelliteimage();
+
+  require([
+    "esri/config",
   "esri/Map",
   "esri/views/MapView",
   "esri/Basemap",
@@ -46,7 +69,7 @@ require([
   esriConfig.apiKey =
     "AAPK5f78ebaec9374c53b7b1c895e1717d88ieojdyoyhcAg-PhVj4wLXUcxMdYDge209t7yxeIAoGDziw7uHeR72rMvXfQsNhSH";
 
-  const imageTileLayer = new TileLayer({
+    const imageTileLayer = new TileLayer({
     portalItem: {
       id: "10df2279f9684e4a9f6a7f08febac2a9", // https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9
     },
@@ -70,8 +93,9 @@ require([
       wkid: 4326, // Assuming the spatial reference is WGS 1984 (Lat/Long)
     },
   });
-
-  const view = new MapView({
+  actualcenter[0] = Math.random() * (18.521-18.52 ) + 18.52; 
+  actualcenter[1] = Math.random() * (73.86 - 73.85) + 73.85;
+   view = new MapView({
     container: "viewDiv",
     map: map,
     zoom: 14,
@@ -87,12 +111,14 @@ require([
       enablePan: true,
     },
   });
-
+  
   view.on("click", function (event) {
     event.stopPropagation();
   });
 });
 
+// }
+// showsatelliteimage();
 const time = document.getElementById("timeremaining");
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
@@ -168,12 +194,14 @@ function settimer() {
 }
 settimer();
 finishguessbutton.addEventListener("click",()=>{
+  // showsatelliteimage();
   console.log("hello finished guessing");
   time.innerText = `${0}` + ":" + `${0}`;
   clearInterval(myinterval);
   guesseddistance=distance(actualcenter[0],actualcenter[1],latitude,longitude);
   score=givescore(guesseddistance);
   scoreobtained.push(score);
+  // map3.addLayer(layer2);
   modal.style.display = "block";
   guesseddistancevalue.innerText=`${guesseddistance}KM`;
   scorevalue.innerText=`${score}`;
@@ -183,10 +211,15 @@ nextround.addEventListener("click", () => {
   longitude = null;
   guesseddistance=0;
   score=0;
-  map2.removeLayer(marker);
   round++;
-  
-  if (round<1) {
+  // showsatelliteimage();
+  map2.removeLayer(marker);
+  actualcenter[0] = Math.random() * (18.521-18.52 ) + 18.52; 
+  actualcenter[1] = Math.random() * (73.86 - 73.85) + 73.85;
+  view.center=[actualcenter[1],actualcenter[0]];
+  // view.goTo({center:[actualcenter[0],actualcenter[1]]})
+  // map.centerAt(new Point(-118.15, 33.80));
+  if (round<6) {
     modal.style.display = "none";
     noofrounds.innerText = `${round}/5`;
     noofroundsdialog.innerText=`${round}`;
@@ -355,25 +388,5 @@ backbutton.addEventListener("mouseout",()=>{
 })
 });
 
-{/* <div class="individualroundcontainer">
-            <p class="roundnumbertext">ROUND 1-</p>
-            <p class="roundscoretext">100</p>
-        </div>
-        <div class="individualroundcontainer">
-            <p class="roundnumbertext">ROUND 2-</p>
-            <p class="roundscoretext">100</p>
-        </div>
-        <div class="individualroundcontainer">
-            <p class="roundnumbertext">ROUND 3-</p>
-            <p class="roundscoretext">100</p>
-        </div>
-        <div class="individualroundcontainer">
-            <p class="roundnumbertext">ROUND 4-</p>
-            <p class="roundscoretext">100</p>
-        </div>
-        <div class="individualroundcontainer">
-            <p class="roundnumbertext">ROUND 5-</p>
-            <p class="roundscoretext">100</p>
-        </div> */}
 
 
